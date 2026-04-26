@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Encryption Engine</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="hero-section">
+            <h1>AES Encryption Engine</h1>
+            <p>Secure 128-bit AES CBC encryption.</p>
+        </header>
+
+        <div class="container">
+            <div class="glass-card">
+                <div class="card-header">
+                    <h2>Input Message</h2>
+                </div>
+                <textarea id="message" placeholder="Enter your secret message here..."></textarea>
+                <div class="actions">
+                    <button onclick="encryptMessage()" class="btn btn-primary">Encrypt Message</button>
+                    <button onclick="decryptMessage()" class="btn btn-outline">Upload & Decrypt</button>
+                </div>
+            </div>
+
+            <div id="output-section" class="glass-card hidden">
+                <div class="card-header">
+                    <h2>Processing Results</h2>
+                </div>
+                
+                <div id="encrypted-results">
+                    <div class="data-group">
+                        <label>Initialization Vector (IV)</label>
+                        <code id="iv-display" class="code-box"></code>
+                    </div>
+                    <div class="data-group">
+                        <label>Ciphertext (Encrypted Data)</label>
+                        <code id="cipher-display" class="code-box"></code>
+                    </div>
+                    <div id="download-container"></div>
+                </div>
+
+                <div id="decrypted-results" class="hidden">
+                    <div class="data-group">
+                        <label>Decrypted Plaintext</label>
+                        <div id="plain-display" class="success-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

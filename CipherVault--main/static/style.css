@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Fira+Code&display=swap');
+
+:root {
+    --bg: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --accent: #8b5cf6; 
+    --text: #f8fafc;
+    --text-dim: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    background-image: radial-gradient(circle at top right, #1e1b4b, transparent), 
+                      radial-gradient(circle at bottom left, #1e1b4b, transparent);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.wrapper { 
+    width: 100%; 
+    max-width: 1000px; /* Wide rectangle layout */
+}
+
+.hero-section { margin-bottom: 3rem; text-align: left; }
+.hero-section h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 0.5rem; }
+.hero-section p { color: var(--text-dim); font-size: 1.1rem; }
+
+/* The Rectangular Glass Card */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--accent); /* Solid themed border */
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.card-header { 
+    margin-bottom: 2rem; 
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.card-header h2 { font-size: 1.25rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+
+/* FIXED ALIGNMENT: Textarea */
+textarea {
+    width: 100%;
+    max-width: 100%; /* Keeps it inside the card */
+    min-height: 160px;
+    resize: vertical; /* FIX: Prevents horizontal dragging out of alignment */
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    outline: none;
+    transition: 0.3s;
+    display: block;
+}
+
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 15px rgba(139, 92, 246, 0.2); }
+
+.actions { display: flex; gap: 1rem; }
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #7c3aed; transform: translateY(-2px); }
+.btn-outline { background: #334155; color: white; }
+
+/* Results Section */
+.data-group { margin-bottom: 1.5rem; }
+.data-group label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.5rem; }
+
+.code-box {
+    display: block;
+    background: #000;
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: #10b981; 
+    word-break: break-all;
+    border: 1px solid #1e293b;
+    line-height: 1.6;
+}
+
+.success-box {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid #10b981;
+    color: #10b981;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hidden { display: none; }
